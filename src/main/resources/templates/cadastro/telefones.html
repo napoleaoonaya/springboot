@@ -35,15 +35,15 @@
 	</div>
 	<h5>Telefones</h5>
 	<div class="row">
-		<form th:action="@{/addfonepessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" method="post" class="col s12">
+		<form th:action="@{/addfonePessoa/{pessoaid}(pessoaid=${pessoaobj.id})}" method="post" class="col s12">
 			<div class="row">
 				<div class="input-field col s6">
-					<label class="active" for="numero">Número</label>
-					<input type="text" id="numero" class="validate">
+					<label class="active" for="numero">Número:</label>
+					<input type="text" id="numero" name="numero" class="validate">
 				</div>
 				<div class="input-field col s6">
-					<label class="active" for="tipo">Tipo</label>
-					<input type="text" id="tipo" class="validate">
+					<label class="active" for="tipo">Tipo:</label>
+					<input type="text" id="tipo" name="tipo" class="validate">
 				</div>
 				<input type="submit" value="Adicionar" class="waves-effect waves-light btn">
 			</div>
@@ -53,6 +53,8 @@
 		<tr th:each="fone : ${telefones}">
 			<td th:text="${fone.numero}"></td>
 			<td th:text="${fone.tipo}"></td>
+			<td><a
+				th:href="@{/removertelefone/{idtelefone}(idtelefone=${fone.id})}">Excluir</a></td>
 		</tr>
 	</table>
 	<!--JavaScript at end of body for optimized loading-->
