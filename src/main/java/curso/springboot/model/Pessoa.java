@@ -13,6 +13,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 public class Pessoa implements Serializable{
 	
@@ -34,7 +36,7 @@ public class Pessoa implements Serializable{
 	private int idade;
 	
 	//Remove as pessoas e o telefone junto orphanRemoval = true, cascade = CascadeType.ALL
-	@OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "pessoa", orphanRemoval = false, cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 	
 	public List<Telefone> getTelefones() {

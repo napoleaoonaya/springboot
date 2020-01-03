@@ -103,6 +103,8 @@ public class PessoaController {
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		
 		modelAndView.addObject("pessoaobj", pessoa.get());
+		
+		modelAndView.addObject("telefones",intefaceTelefoneRepository.getTelefones(idpessoa) );
 
 		return modelAndView;
 
