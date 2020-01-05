@@ -97,7 +97,7 @@ public class Pessoa implements Serializable {
 	
 	// Remove as pessoas e o telefone junto orphanRemoval = true, cascade =
 	// CascadeType.ALL
-	@OneToMany(mappedBy = "pessoa", orphanRemoval = false, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Telefone> telefones;
 
 	public List<Telefone> getTelefones() {
