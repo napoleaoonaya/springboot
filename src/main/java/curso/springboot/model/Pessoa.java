@@ -46,6 +46,26 @@ public class Pessoa implements Serializable {
 	private String uf;
 
 	private String ibge;
+	
+	private String numero;
+	
+	public String getNumero() {
+		return numero;
+	}
+	
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+	
+	private String sexopessoa;
+	
+	public String getSexopessoa() {
+		return sexopessoa;
+	}
+	
+	public void setSexopessoa(String sexopessoa) {
+		this.sexopessoa = sexopessoa;
+	}
 
 	public String getCep() {
 		return cep;
