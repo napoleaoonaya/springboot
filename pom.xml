@@ -69,7 +69,11 @@
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 			<version>3.0.4.RELEASE</version>
 		</dependency>
-
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.8.0</version>
+		</dependency>
 
 	</dependencies>
 
