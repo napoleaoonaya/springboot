@@ -108,6 +108,16 @@ form input[type="submit"] {
 					<label for="idade" class="active">idade</label> <input type="text"
 						name="idade" id="idade" th:field="*{idade}">
 				</div>
+				
+				<div class="input-field col s6">
+					<label for="profissao" class="active">Profissão</label>
+					<select class="browser-default" th:field="*{profissao}" id="profissao">
+						<option th:each = "p : ${profissoes}" th:value="${p.id}" th:text="${p.nome}"></option>
+					</select> 
+				</div>
+				
+				
+				
 			</div>
 			<div class="row">
 				<div class="input-field col s6">

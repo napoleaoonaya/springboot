@@ -24,6 +24,7 @@ import curso.springboot.model.Pessoa;
 import curso.springboot.model.Telefone;
 import curso.springboot.repository.IntefaceTelefoneRepository;
 import curso.springboot.repository.InterfacePessoaRepository;
+import curso.springboot.repository.ProfissaoRepository;
 
 @Controller
 public class PessoaController {
@@ -36,6 +37,9 @@ public class PessoaController {
 	
 	@Autowired
 	private ReportUtil reportUtil;
+	
+	@Autowired
+	private ProfissaoRepository profissaoRepository;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/cadastropessoa")
 	public ModelAndView inicio() {
@@ -48,6 +52,8 @@ public class PessoaController {
 		
 		modelAndView.addObject("pessoaobj", new Pessoa());
 
+		modelAndView.addObject("profissoes", profissaoRepository.findAll());
+		
 		return modelAndView;
 	}
 
@@ -71,6 +77,7 @@ public class PessoaController {
 			}
 			
 			modelAndView.addObject("msg", msg);
+			modelAndView.addObject("profissoes", profissaoRepository.findAll());
 			return modelAndView;
 		}
 		
@@ -112,6 +119,8 @@ public class PessoaController {
 		
 		modelAndView.addObject("telefones",intefaceTelefoneRepository.getTelefones(idpessoa) );
 
+		modelAndView.addObject("profissoes", profissaoRepository.findAll());
+		
 		return modelAndView;
 
 	}
